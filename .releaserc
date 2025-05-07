@@ -1,0 +1,64 @@
+{
+  "branches": ["master"],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          { "type": "feat", "release": "minor" },
+          { "type": "fix", "release": "patch" },
+          { "type": "chore", "scope": "deps", "release": "patch" },
+          { "type": "chore", "scope": "deps-dev", "release": "patch" },
+          { "type": "docs", "release": false },
+          { "type": "style", "release": false },
+          { "type": "refactor", "release": false },
+          { "type": "ci", "release": false },
+          { "type": "chore", "release": false },
+          { "message": "BREAKING CHANGE", "release": "major" },
+          { "type": "feat", "message": "*!", "release": "major" },
+          { "type": "refactor", "message": "*!", "release": "major" }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            { "type": "feat", "section": "Features" },
+            { "type": "fix", "section": "Bug Fixes" },
+            { "type": "docs", "section": "Documentation" },
+            { "type": "style", "section": "Styles" },
+            { "type": "refactor", "section": "Refactors" },
+            { "type": "ci", "section": "CI/CD" },
+            { "type": "chore", "section": "Chores" }
+          ]
+        }
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": false,
+        "tarballDir": "dist"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["package.json", "CHANGELOG.md", "yarn.lock"],
+        "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}",
+        "preserveVersion": true
+      }
+    ],
+    "@semantic-release/github"
+  ]
+} 
