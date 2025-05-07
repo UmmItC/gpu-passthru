@@ -1,3 +1,13 @@
+## [1.0.2](https://github.com/UmmItC/gpu-passthru/compare/v1.0.1...v1.0.2) (2025-05-07)
+
+### Bug Fixes
+
+* remove pnpm-lock.yaml to streamline dependency management for only yarn ([a21cbd7](https://github.com/UmmItC/gpu-passthru/commit/a21cbd7d3656b0991fc88ba4c113d2491a7c4865))
+
+### Chores
+
+* **deps:** bump react from 19.0.0 to 19.1.0 ([501c88d](https://github.com/UmmItC/gpu-passthru/commit/501c88da96b5eeadb3f5a71dd3d98cd70b9c1b60))
+
 ## [1.0.1](https://github.com/UmmItC/gpu-passthru/compare/v1.0.0...v1.0.1) (2025-05-07)
 
 ### Bug Fixes
