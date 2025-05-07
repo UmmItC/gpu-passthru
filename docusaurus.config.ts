@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'GPU Passthrough Made Easy',
-  tagline: 'Made GPU-Passthru easy, for everyone. Just follow the guide!',
+  tagline: 'Made GPU-Passthru easy, for everyone. Just follow our simple guide!',
   favicon: 'img/gpu.png',
 
   // Set the production url of your site here
