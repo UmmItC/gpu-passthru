@@ -1,3 +1,17 @@
+## [1.0.3](https://github.com/UmmItC/gpu-passthru/compare/v1.0.2...v1.0.3) (2025-05-08)
+
+### Bug Fixes
+
+* **deps:** update dependencies to latest versions in yarn.lock to fix unknown issue with incompatible package versions ([ee24382](https://github.com/UmmItC/gpu-passthru/commit/ee2438272d501c672684eb3ac15ce7f75551f9e4))
+
+### Refactors
+
+* update HomepageFeatures component to use ReactElement type and add image type declarations ([30c26f6](https://github.com/UmmItC/gpu-passthru/commit/30c26f67fca667c1721c78c6a6497a23211e5c0f))
+
+### Chores
+
+* **deps-dev:** bump typescript from 5.7.3 to 5.8.3 ([32dc188](https://github.com/UmmItC/gpu-passthru/commit/32dc188c65c9c0fed2f3f796d8b1c0d935c28e6c))
+
 ## [1.0.2](https://github.com/UmmItC/gpu-passthru/compare/v1.0.1...v1.0.2) (2025-05-07)
 
 ### Bug Fixes
