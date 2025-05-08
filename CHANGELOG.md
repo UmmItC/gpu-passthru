@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/UmmItC/gpu-passthru/compare/v1.0.3...v1.1.0) (2025-05-08)
+
+### Features
+
+* **ci:** add docusaurus-mdx-checker for MDX and CI for error checking ([ab96783](https://github.com/UmmItC/gpu-passthru/commit/ab9678314edc66337d79320eec3e0d85e62f5f51))
+
 ## [1.0.3](https://github.com/UmmItC/gpu-passthru/compare/v1.0.2...v1.0.3) (2025-05-08)
 
 ### Bug Fixes
