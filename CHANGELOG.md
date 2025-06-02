@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/UmmItC/gpu-passthru/compare/v1.2.1...v1.2.2) (2025-06-02)
+
+### Bug Fixes
+
+* **ci:** update deployment workflow to include GitHub credentials ([222505d](https://github.com/UmmItC/gpu-passthru/commit/222505d2d803c2ca157ec86d90c7da8101afa577))
+
 ## [1.2.1](https://github.com/UmmItC/gpu-passthru/compare/v1.2.0...v1.2.1) (2025-06-02)
 
 ### Bug Fixes
