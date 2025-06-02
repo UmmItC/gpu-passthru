@@ -4,11 +4,10 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 
 ## Installation
 
-To get started, install the necessary dependencies and upgrade to the latest versions:
+To get started, install the necessary dependencies:
 
 ```bash
 yarn install
-yarn upgrade --latest
 ```
 
 ## Local Development
@@ -18,6 +17,8 @@ To start a local development server, run:
 ```bash
 yarn start
 ```
+
+This command starts a local development server and opens a browser window. Most changes are reflected live without having to restart the server.
 
 ## Build
 
@@ -31,7 +32,9 @@ This command generates static content into the `build` directory and can be serv
 
 ## Deployment
 
-To deploy your website, simply run:
+### Manual Deployment
+
+To deploy your website manually, run:
 
 ```bash
 yarn deploy
@@ -39,9 +42,13 @@ yarn deploy
 
 This command builds the website and pushes it to the `gh-pages` branch, making it easy to deploy to GitHub Pages.
 
+### GitHub CI
+
+We provide a CI script for automation. Just push your changes and the workflow will automatically build, commit, and push.
+
 ### Custom Domain
 
-Modify the `baseUrl` field in the `docusaurus.config.js` file to match your custom domain.
+Modify the `baseUrl` field in the `docusaurus.config.js` file to match your custom domain:
 
 ```js
 const config: Config = {
@@ -54,22 +61,16 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
+}
 ```
 
-And the CNAME file in the `static` directory:
-
-```bash
-echo "domain.com" > static/CNAME
-```
-
-As the example is using the domain 'domain.com', replace it with your custom domain.
+Edit your domain in the CNAME file located at `static/CNAME`. Replace the example domain with your custom domain.
 
 ## Contributing
 
 If you'd like to contribute to this project, please fork the repository and submit a pull request. We welcome contributions of all kinds!
 
-Also please adhere to the conventional commits specification, keep commit messages clear :)
+Please adhere to the conventional commits specification and keep commit messages clear.
 
 ## License
 
