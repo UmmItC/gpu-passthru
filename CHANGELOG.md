@@ -1,3 +1,21 @@
+## [1.2.0](https://github.com/UmmItC/gpu-passthru/compare/v1.1.0...v1.2.0) (2025-06-02)
+
+### Features
+
+* **ci:** add GitHub Actions workflow for deployment ([e587717](https://github.com/UmmItC/gpu-passthru/commit/e587717cd9f5cb6f41a30ab4d7839332aa46f271))
+
+### Chores
+
+* **deps-dev:** bump @docusaurus/module-type-aliases ([5f64274](https://github.com/UmmItC/gpu-passthru/commit/5f64274e749fefb251091760bfd2835e76cc62ac))
+* **deps-dev:** bump @docusaurus/tsconfig from 3.7.0 to 3.8.0 ([fb446c2](https://github.com/UmmItC/gpu-passthru/commit/fb446c218cef16861b0d1d5359959e76a9568405))
+* **deps-dev:** bump @docusaurus/types from 3.7.0 to 3.8.0 ([6e1e07b](https://github.com/UmmItC/gpu-passthru/commit/6e1e07b838ce201ac6fb4f1af4f7b0c170b658d2))
+* **deps-dev:** bump @semantic-release/github from 11.0.2 to 11.0.3 ([ee006b7](https://github.com/UmmItC/gpu-passthru/commit/ee006b72c8a801403dc84e4833ce5308186e1151))
+* **deps-dev:** bump conventional-changelog-conventionalcommits ([76558c1](https://github.com/UmmItC/gpu-passthru/commit/76558c161a0423a18c601c11457d03b484298d55))
+* **deps-dev:** bump semantic-release from 24.2.3 to 24.2.4 ([d62f4ff](https://github.com/UmmItC/gpu-passthru/commit/d62f4ff50a2d582e5d6e09f46e269178d03d98da))
+* **deps-dev:** bump semantic-release from 24.2.4 to 24.2.5 ([9474c38](https://github.com/UmmItC/gpu-passthru/commit/9474c380b13a03c6120b30f742c961df24ff6712))
+* **deps:** bump @docusaurus/preset-classic from 3.7.0 to 3.8.0 ([c04ed14](https://github.com/UmmItC/gpu-passthru/commit/c04ed144bbc59e1ee67f72c9d71153a1f1f86765))
+* **deps:** bump docusaurus to lastest version ([dc71b57](https://github.com/UmmItC/gpu-passthru/commit/dc71b57952b5af6c32ea7dbef0dfaea85d8176b4))
+
 ## [1.1.0](https://github.com/UmmItC/gpu-passthru/compare/v1.0.3...v1.1.0) (2025-05-08)
 
 ### Features
