@@ -1,3 +1,9 @@
+## [1.2.4](https://github.com/UmmItC/gpu-passthru/compare/v1.2.3...v1.2.4) (2025-06-02)
+
+### Bug Fixes
+
+* **ci:** add write permissions to deployment workflow ([e501644](https://github.com/UmmItC/gpu-passthru/commit/e50164427fddf41ea21488a152da10f653ff8fa9))
+
 ## [1.2.3](https://github.com/UmmItC/gpu-passthru/compare/v1.2.2...v1.2.3) (2025-06-02)
 
 ### Bug Fixes
