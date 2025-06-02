@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/UmmItC/gpu-passthru/compare/v1.2.0...v1.2.1) (2025-06-02)
+
+### Bug Fixes
+
+* **ci:** add dependency installation step to deployment workflow ([d70643e](https://github.com/UmmItC/gpu-passthru/commit/d70643e7298ffd7492480251707a4e937d2b9029))
+
 ## [1.2.0](https://github.com/UmmItC/gpu-passthru/compare/v1.1.0...v1.2.0) (2025-06-02)
 
 ### Features
