@@ -4,11 +4,11 @@ sidebar_position: 8
 
 # Passthrough the GPU!
 
-# Explore IOMMU Grouping
+## Explore IOMMU Grouping
 
-Let passthrough our second GPU now, run the following command in your terminal:
+Let's passthrough our second GPU now. Run the following command in your terminal:
 
-```shell
+```bash title="Script for listing IOMMU Groups"
 #!/bin/bash
 shopt -s nullglob
 for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
@@ -19,15 +19,19 @@ for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
 done;
 ```
 
+:::info
+This script should output information about your PCI device. If it does not, it may be because you haven't enabled the necessary settings in your BIOS.
+:::
+
 This script provides a detailed view of IOMMU groups and their associated devices, helping you understand the connections within your system. This information is vital for configuring device passthrough in virtualization.
 
-## 1.2 Identify IOMMU GPU IDs
+## Identify IOMMU GPU IDs
 
 The output from the above command will list your GPUs. Your second GPU, the one designated for passthrough, will be included in this list. Note its PCI (Peripheral Component Interconnect) numbers, also known as **PCI IDs**. These IDs are critical for the upcoming steps.
 
-Here’s an example of what you might see:
+Here's an example of what you might see:
 
-```shell
+```txt
 IOMMU Group 22:
 	09:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 23 [Radeon RX 6600/6600 XT/6600M] [1002:73ff] (rev c7)
 IOMMU Group 23:
@@ -43,85 +47,87 @@ Suppose your investigation reveals the following GPU IDs:
 
 Keep these IDs handy, as they are crucial for the next steps.
 
-## 1.3 Embed IDs in Your Bootloader Config
+## Embed IDs in Your Bootloader Config
 
 Configuring GPU passthrough involves specifying which GPU to allocate to the virtual machine by using its PCI IDs. These IDs pinpoint the GPU within the system, enabling direct hardware access.
 
 Add the PCI IDs to your bootloader configuration. If you're using GRUB or another bootloader, include the following in the configuration line where you enabled virtualization:
 
-```shell
+```txt {1} title="PCI IDs to Add"
 vfio-pci.ids=1002:73ff,1002:ab28
 ```
 
-### Systemd-boot example
+### Systemd-boot Example
 
 Your updated configuration with systemd-boot should look like this:
 
-```shell
+```txt {4} title="systemd-boot configuration"
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options root=<root> quiet rw intel_iommu=on iommu=pt vfio-pci.ids=1002:73ff,1002:ab28
 ```
 
->Tips: for user systemd-boot, you do not need to regenerate the config.
+:::tip
+For systemd-boot users, you do not need to regenerate the config.
+:::
 
-### GRUB example
+### GRUB Example
 
 Your updated configuration with GRUB should look like this:
 
-```shell
+```txt {1} title="GRUB configuration"
 GRUB_CMDLINE_LINUX_DEFAULT="intel_iommu=on iommu=pt vfio-pci.ids=1002:73ff,1002:ab28 ..."
-````
+```
 
-For the GRUB user, you will need to regenerate the config file:
+For GRUB users, you will need to regenerate the config file:
 
-```shell
+```bash title="Regenerate GRUB config"
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## 2. Create a `vfio.conf` File
+## Create a `vfio.conf` File
 
 Next, create a new configuration file for `vfio`:
 
-```shell
-sudo vim /etc/modprobe.d/vfio.conf
+```bash title="Create vfio.conf"
+sudo touch /etc/modprobe.d/vfio.conf
 ```
 
 Add the following content:
 
-```shell
+```txt {1} title="vfio.conf content"
 options vfio-pci ids=1002:73ff,1002:ab28
 ```
 
-## 3. Update `mkinitcpio.conf`
+## Update `mkinitcpio.conf`
 
 Ensure that the necessary `vfio` modules are included in your initial RAM disk. Edit the `/etc/mkinitcpio.conf` file and update the `MODULES()` line:
 
-```shell
-MODULES=(vfio_pci vfio vfio_iommu_type1) 
+```txt {1} title="mkinitcpio.conf modules line"
+MODULES=(vfio_pci vfio vfio_iommu_type1)
 ```
 
-## 3.2 Regenerate the Image
+## Regenerate the Image
 
 With the configuration updated, rebuild the initial RAM disk and reboot your system:
 
-```shell
+```bash title="Regenerate initramfs"
 sudo mkinitcpio -P # Regenerate all image
 sudo mkinitcpio -p linux # Regenerate image only linux
 ```
 
-## 4. Verify GPU Passthrough Status
+## Verify GPU Passthrough Status
 
-Now reboot your system and check the status of your GPU. To check if your GPU is correctly configured for passthrough, run
+Now reboot your system and check the status of your GPU. To check if your GPU is correctly configured for passthrough, run:
 
-```shell
+```bash title="Check PCI devices"
 lspci -k
 ```
 
 Look at your PCI setup. The `Kernel driver in use` entry should show `vfio-pci`. For example:
 
-```shell
+```txt {3,7} title="Success Example"
 09:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Navi 23 [Radeon RX 6600/6600 XT/6600M] (rev c7)
 	Subsystem: Tul Corporation / PowerColor Navi 23 [Radeon RX 6600/6600 XT/6600M]
 	Kernel driver in use: vfio-pci
@@ -132,8 +138,6 @@ Look at your PCI setup. The `Kernel driver in use` entry should show `vfio-pci`.
 	Kernel modules: snd_hda_intel
 ```
 
+:::success
 If you see `vfio-pci`, your GPU and GPU Audio are successfully set up for passthrough. If not, review your steps and try again. Success is within reach!
-
-## Next Step
-
-In the next steps, we’ll cover installing the necessary packages, setting up `libvirt` permissions, configuring group memberships, adjusting `QEMU` permissions, and managing the `libvirt` service. Start by installing the required packages for virtualization. Then, configure permissions for `libvirt` to ensure proper management of virtualization resources. You’ll also need to add your user to the relevant groups and set the correct permissions for `QEMU`. Finally, start the `libvirt` service to ensure it runs correctly.
+:::

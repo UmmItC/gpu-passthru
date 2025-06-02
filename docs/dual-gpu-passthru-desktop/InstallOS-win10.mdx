@@ -4,65 +4,67 @@ sidebar_position: 12
 
 # Setting Up Your Virtual Machine (Windows 10) – The Final Steps
 
-Well done! You’re almost there. The last crucial steps for setting up your Windows 10 virtual machine.
+Well done! You're almost there. The last crucial steps for setting up your Windows 10 virtual machine.
 
-### 1. Launch virt-manager and Create a New VM
+## 1. Launch virt-manager and Create a New VM
 
 Open up `virt-manager` and start by creating a new virtual machine.
 
 ![New VM](./images/win10/New%20VM.png)
 
-### 1.2 Select Your Windows 10 ISO
+### 1.1 Select Your Windows 10 ISO
 
 Choose your Windows 10 ISO file.
 
 ![Select ISO](./images/win10/Select_ISO.png)
 
-### 1.3 Choose Your RAM
+### 1.2 Choose Your RAM
 
 Decide on the amount of RAM you want to allocate to your VM.
 
 ![Select RAM](./images/win10/Select_ram.png)
 
-### 1.4 Set Disk Image Size
+### 1.3 Set Disk Image Size
 
-Set the size of your virtual machine’s disk. Make sure to check `Enable storage for this virtual machine.`
+Set the size of your virtual machine's disk. Make sure to check `Enable storage for this virtual machine.`
 
 ![Select Disk Size](./images/win10/Select_Disk_Size.png)
 
-### 1.5 Configure VM Settings
+### 1.4 Configure VM Settings
 
 Give your virtual machine a name and tick the box to `Customize configuration before install.`
 
 ![Ready to Install](./images/win10/Ready_to_install.png)
 
-### 1.6 Select Firmware
+### 1.5 Select Firmware
 
 Choose `OVMF_CODE.fd` for firmware.
 
->**IMPORTANT**: This setting cannot be changed after you begin the installation, so double-check this choice.
+:::caution
+**IMPORTANT**: This setting cannot be changed after you begin the installation, so double-check this choice.
+:::
 
 ![Firmware](./images/win10/Firmware.png)
 
-### 1.7 Set Boot Options
+### 1.6 Set Boot Options
 
 Enable the boot menu. Select `SATA CDROM 1` and ensure it is checked. Set it as the first boot device to make sure it detects your Windows 10 installation ISO.
 
 ![Boot Options](./images/win10/Boot_optinos_1.png)
 
-### 1.8 Add VirtIO Disk
+### 1.7 Add VirtIO Disk
 
-After installing Windows, add a VirtIO Disk. we'll use for later.
+After installing Windows, add a VirtIO Disk. We'll use this for later.
 
 ![Add VirtIO Disk](./images/win10/Add_VirtIO.png)
 
-### 1.9 Add VirtIO ISO
+### 1.8 Add VirtIO ISO
 
-add the VirtIO ISO. This will be essential for smooth operation once Windows is installed.
+Add the VirtIO ISO. This will be essential for smooth operation once Windows is installed.
 
 ![Add VirtIO ISO](./images/win10/Add_VirtIO_ISO.png)
 
-### 1.9.1 Confirm Boot Options
+### 1.9 Confirm Boot Options
 
 Verify that your boot options look like the example below.
 
@@ -80,25 +82,25 @@ When prompted, press any key to boot from your CD/DVD.
 
 ![Press Any Key](./images/win10/Press_any_key_to_boot_up_system.png)
 
-### 3.2 Exit the UEFI Shell
+### 3.1 Exit the UEFI Shell
 
 If you get stuck in the UEFI Shell, type `exit` and press Enter to move forward.
 
 ![Exit UEFI Shell](./images/win10/Exit_bo.png)
 
-### 3.3 Select Boot Manager
+### 3.2 Select Boot Manager
 
 Use the arrow keys to navigate to and select `Boot Manager`.
 
 ![Boot Manager](./images/win10/Boot_manager_1.png)
 
-### 3.4 Select Boot Manager (DVD)
+### 3.3 Select Boot Manager (DVD)
 
 Choose the first option to boot from the DVD.
 
 ![Boot Manager Select DVD](./images/win10/Boot_manager_select_DVD.png)
 
-### 3.5 Press Any Key Again
+### 3.4 Press Any Key Again
 
 Press any key to continue booting up your system.
 
@@ -106,83 +108,83 @@ Press any key to continue booting up your system.
 
 ## 4. Windows Setup
 
-Now you’ll see the Windows setup process start. The installation steps are similar to a regular Windows installation. Keep clicking `Next` until you reach the `Install Windows` option.
+Now you'll see the Windows setup process start. The installation steps are similar to a regular Windows installation. Keep clicking `Next` until you reach the `Install Windows` option.
 
 ![Windows Setup](./images/win10/Windows_Setup.png)
 
-### 4.2 Install Now
+### 4.1 Install Now
 
 Click `Install now`.
 
 ![Install Now](./images/win10/Install_now.png)
 
-### 4.3 Skip Product Key
+### 4.2 Skip Product Key
 
-Click `I don’t have a product key`.
+Click `I don't have a product key`.
 
 ![Skip Product Key](./images/win10/i_dont_have_product_key.png)
 
-### 4.4 Select Version
+### 4.3 Select Version
 
 Choose the Pro version of Windows. The Pro version supports offline accounts.
 
 ![Windows Pro](./images/win10/windows_Pro.png)
 
-### 4.5 Accept License Terms
+### 4.4 Accept License Terms
 
 Tick the box to accept the license terms.
 
 ![Accept License](./images/win10/Accept_license.png)
 
-### 4.6 Custom Installation
+### 4.5 Custom Installation
 
 Select `Custom` installation.
 
 ![Custom Install](./images/win10/Custom_install.png)
 
-### 4.7 Load Drivers
+### 4.6 Load Drivers
 
 Click `Load drivers`.
 
 ![Load Drivers](./images/win10/Load_drivers.png)
 
-### 4.8 Browse for Drivers
+### 4.7 Browse for Drivers
 
 Click `Browse`.
 
 ![Browse Drivers](./images/win10/Browse_drivers.png)
 
-### 4.9 Select Virtio-Win
+### 4.8 Select Virtio-Win
 
 Choose the path `E:\amd64\w10` and click `OK`.
 
 ![Select Virtio-Win](./images/win10/AMD64.png)
 
-### 4.9.1 Red Hat VirtIO SCSI Controller
+### 4.9 Red Hat VirtIO SCSI Controller
 
 Select `Red Hat VirtIO SCSI controller` and click `Next`.
 
 ![Red Hat VirtIO SCSI](./images/win10/SCSI.png)
 
-### 4.9.2 VirtIO Disk
+### 4.10 VirtIO Disk
 
 You should see the new VirtIO Disk. This disk is crucial for installing new drivers later, so do not delete it.
 
 ![VirtIO Disk](./images/win10/VirtIO_Disk.png)
 
-### 4.9.3 Select Installation Disk
+### 4.11 Select Installation Disk
 
 Choose your disk for installing Windows. You can partition it into drives (e.g., 150 GB and 350 GB) as needed.
 
 ![Select Installation Disk](./images/win10/install_windows_1.png)
 
-## 4.9.4 Installing Windows
+### 4.12 Installing Windows
 
 Click to start the installation. This process will take some time.
 
 ![Installing Windows](./images/win10/iw.png)
 
-### 4.9.5 Windows Configuration
+### 4.13 Windows Configuration
 
 Follow the prompts to complete the Windows setup. You can customize settings or proceed with defaults.
 
@@ -195,7 +197,7 @@ Follow the prompts to complete the Windows setup. You can customize settings or 
 ![Windows Configuration](./images/win10/w8.png)
 ![Windows Configuration](./images/win10/w9.png)
 
-### 4.9.6 Power Off
+### 4.14 Power Off
 
 Once the setup is complete, power off your VM.
 
@@ -228,7 +230,7 @@ Windows updates can be slow, so be patient lmfao.
 ![Update Windows](./images/win10/Update_windows_2.png)
 ![Update Windows](./images/win10/Update_windows_3.png)
 
-### 7.2 Update Drivers
+### 7.1 Update Drivers
 
 To update your drivers, open Device Manager, find your PCI device, right-click, and select `Update Driver`.
 
@@ -244,13 +246,13 @@ To update your drivers, open Device Manager, find your PCI device, right-click, 
 4. Browse to the path where your drivers are located (typically `E:\` or the path where you stored your VirtIO drivers) and click `Next`:
    ![Select Path](./images/win10/drivers_update_3.png)
 
-You should see your GPU listed in Device Manager, indicating that it’s correctly passthroughed.
+You should see your GPU listed in Device Manager, indicating that it's correctly passthroughed.
 
 ![GPU Passthrough](./images/win10/GPU-ok.png)
 
-### 7.3 Install VirtIO Drivers
+### 7.2 Install VirtIO Drivers
 
-To improve your VM’s performance, you need to install VirtIO drivers. Follow these steps:
+To improve your VM's performance, you need to install VirtIO drivers. Follow these steps:
 
 1. Open File Explorer and navigate to the `E:\` drive where your VirtIO drivers are located.
 
@@ -284,20 +286,22 @@ To improve your VM’s performance, you need to install VirtIO drivers. Follow t
 
 For optimal performance, use a physical monitor instead of a virtual one. Ensure your second monitor displays your Windows 10 VM.
 
-If not displayed, back to your vm and check that the GPU is enabled? if not enabled, on device section right-click to enable the GPU.
+If not displayed, back to your VM and check that the GPU is enabled. If not enabled, on device section right-click to enable the GPU.
 
 ![Display Settings](./images/win10/VGA.png)
 
-### 8.2 Passthrough USB and Mouse
+### 8.1 Passthrough USB and Mouse
 
 To ensure smooth mouse and keyboard input, passthrough these devices to your VM.
 
->So that's why you might need two mice and a keyboard lol.
+:::note
+So that's why you might need two mice and a keyboard lol.
+:::
 
 ![Mouse Passthrough](./images/win10/Mouse_passthrough.png)
 ![Keyboard Passthrough](./images/win10/Keyboard_passthrough.png)
 
-### 8.3 Optimize CPU Configuration
+### 8.2 Optimize CPU Configuration
 
 For better performance, configure your VM to use physical CPU cores instead of vCPUs.
 
@@ -305,15 +309,12 @@ For better performance, configure your VM to use physical CPU cores instead of v
 
 ## 9. Disable Automatic Suspend
 
-Back to your GNU/Linux, To prevent your VM from being interrupted by idle timeouts, disable the `When idle` Automatic Suspend setting.
+Back to your GNU/Linux, to prevent your VM from being interrupted by idle timeouts, disable the `When idle` Automatic Suspend setting.
 
 ![Power Setting Idle](./images/win10/Power_setting_idle.png)
 
-## Conclusion: You’re All Set!
+## You're All Set!!!!
 
 Congratulations on setting up your virtual machine with hardware passthrough! You should now be able to use your second monitor and enjoy your VM for various tasks, including gaming.
 
-If you run into any graphics issues, make sure to download and install the latest drivers for your GPU from:
-
-- [AMD Support](https://www.amd.com/en/support)
-- [NVIDIA Driver Downloads](https://www.nvidia.com/download/index.aspx)
+Now, make sure to download and install the latest drivers for your GPU.
