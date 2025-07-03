@@ -8,7 +8,7 @@ const config: Config = {
   favicon: 'img/gpu.png',
 
   // Set the production url of your site here
-  url: 'https://gpu-passthru.ummit.dev',
+  url: 'https://gpu.passthru.info',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -16,7 +16,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'UmmItC', // Usually your GitHub org/user name.
-  projectName: 'gpu-passthru', // Usually your repo name.
+  projectName: 'passthru', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -38,7 +38,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/UmmItC/gpu-passthru/tree/master/',
+            'https://github.com/UmmItC/passthru/tree/master/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
@@ -51,7 +51,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/UmmItC/gpu-passthru/tree/master/',
+            'https://github.com/UmmItC/passthru/tree/master/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -68,9 +68,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'gpu-passthru',
+      title: 'Passthru',
       logo: {
-        alt: 'gpu-passthru Logo',
+        alt: 'passthru Logo',
         src: 'img/gpu.png',
       },
       items: [
@@ -90,12 +90,12 @@ const config: Config = {
           items: [
             {
               label: 'Github',
-              href: 'https://github.com/UmmItC/gpu-passthru',
+              href: 'https://github.com/UmmItC/passthru',
             },
           ],
         }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} gpu-passthru, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} passthru, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
