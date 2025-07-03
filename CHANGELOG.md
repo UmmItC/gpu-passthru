@@ -1,3 +1,31 @@
+## [1.3.0](https://github.com/UmmItC/passthru/compare/v1.2.4...v1.3.0) (2025-07-03)
+
+### ⚠ BREAKING CHANGES
+
+* trigger to next release for Domain changed
+
+### Features
+
+* trigger to next release for Domain changed ([1ea0b0a](https://github.com/UmmItC/passthru/commit/1ea0b0a887d8800c5476a2c138cc404e15abb11a))
+
+### Documentation
+
+* enhance Dual GPU passthrough documentation with detailed sections for more clean ([8c1ea95](https://github.com/UmmItC/passthru/commit/8c1ea95e1d118aed6f04b7890d2d49ced0249a2d))
+* update README for clarity and additional deployment instructions ([d1d3276](https://github.com/UmmItC/passthru/commit/d1d327647815c68df7d28a9bd5040f834890ad97))
+
+### Refactors
+
+* trigger to next release for Domain changed ([3fab7bb](https://github.com/UmmItC/passthru/commit/3fab7bbadd40f12e6ee2f36f3bcbe83e56b21bbe))
+
+### Chores
+
+* **deps-dev:** bump @docusaurus/module-type-aliases ([65fcec5](https://github.com/UmmItC/passthru/commit/65fcec50f8d6d7d145c8b16800460a0d311a11b1))
+* **deps-dev:** bump @docusaurus/tsconfig from 3.8.0 to 3.8.1 ([04f8107](https://github.com/UmmItC/passthru/commit/04f8107703760df3010cf498d72b42b9675fd3c1))
+* **deps-dev:** bump @semantic-release/npm from 12.0.1 to 12.0.2 ([222845e](https://github.com/UmmItC/passthru/commit/222845eeddc8751ef30c9aabcac50e76aa3db41d))
+* **deps-dev:** bump semantic-release from 24.2.5 to 24.2.6 ([fa67059](https://github.com/UmmItC/passthru/commit/fa6705936a8c88a5088e6a5eab4f58861c4df88f))
+* **deps:** bump @docusaurus/preset-classic from 3.8.0 to 3.8.1 ([dded9e8](https://github.com/UmmItC/passthru/commit/dded9e89695df5c7bfe12234f411b64323aefe2e))
+* **deps:** update @docusaurus/core and @docusaurus/types to version 3.8.1 ([daa8c16](https://github.com/UmmItC/passthru/commit/daa8c165af61afd748dd93534fbec78aa63b5699))
+
 ## [1.2.4](https://github.com/UmmItC/gpu-passthru/compare/v1.2.3...v1.2.4) (2025-06-02)
 
 ### Bug Fixes
