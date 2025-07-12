@@ -13,17 +13,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v2
       with:
-        node-version: '20'
-        cache: 'yarn'
+        bun-version: latest
     
     - name: Install dependencies
-      run: yarn install --frozen-lockfile
+      run: bun install --frozen-lockfile
     
     - name: TypeScript check
-      run: yarn tsc
+      run: bun run tsc
     
     - name: MDX check
-      run: yarn docusaurus-mdx-checker 
+      run: bun run docusaurus-mdx-checker 
