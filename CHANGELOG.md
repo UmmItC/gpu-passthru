@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/UmmItC/passthru/compare/v2.0.0...v2.0.1) (2025-07-12)
+
+### Bug Fixes
+
+* update .releaserc to include bun.lock for asset management ([402a472](https://github.com/UmmItC/passthru/commit/402a4723805f9f594a941d5792f478f77ed40957))
+
 ## [2.0.0](https://github.com/UmmItC/passthru/compare/v1.3.0...v2.0.0) (2025-07-12)
 
 ### ⚠ BREAKING CHANGES
