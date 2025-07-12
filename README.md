@@ -7,7 +7,7 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 To get started, install the necessary dependencies:
 
 ```bash
-yarn install
+bun install
 ```
 
 ## Local Development
@@ -15,32 +15,12 @@ yarn install
 To start a local development server, run:
 
 ```bash
-yarn start
+bun start
 ```
-
-This command starts a local development server and opens a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-To generate static content, use the following command:
-
-```bash
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static content hosting service.
 
 ## Deployment
 
-### Manual Deployment
-
-To deploy your website manually, run:
-
-```bash
-yarn deploy
-```
-
-This command builds the website and pushes it to the `gh-pages` branch, making it easy to deploy to GitHub Pages.
+You can use Vercel to depoly, Very easy.
 
 ### GitHub CI
 
@@ -63,8 +43,6 @@ const config: Config = {
   baseUrl: '/',
 }
 ```
-
-Edit your domain in the CNAME file located at `static/CNAME`. Replace the example domain with your custom domain.
 
 ## Contributing
 
