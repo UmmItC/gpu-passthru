@@ -1,3 +1,18 @@
+## [2.0.0](https://github.com/UmmItC/passthru/compare/v1.3.0...v2.0.0) (2025-07-12)
+
+### ⚠ BREAKING CHANGES
+
+* migrate from Yarn to Bun for package management
+
+### Refactors
+
+* migrate from Yarn to Bun for package management ([01a5df7](https://github.com/UmmItC/passthru/commit/01a5df7034b7534aa3d7310ff45221724e4a2454))
+* remove GitHub Actions deployment workflow file ([03428c9](https://github.com/UmmItC/passthru/commit/03428c90e6a3f45e31cce74999bd17c927e3ebd5))
+
+### CI/CD
+
+* **fix:** update .releaserc to enable GitHub PR integration for always allow ([cffb76d](https://github.com/UmmItC/passthru/commit/cffb76d32b0a9fe0480d9069ef428c7e8e40f3ec))
+
 ## [1.3.0](https://github.com/UmmItC/passthru/compare/v1.2.4...v1.3.0) (2025-07-03)
 
 ### ⚠ BREAKING CHANGES
