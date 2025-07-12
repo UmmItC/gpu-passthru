@@ -54,7 +54,7 @@
     [
       "@semantic-release/git",
       {
-        "assets": ["package.json", "CHANGELOG.md", "yarn.lock"],
+        "assets": ["package.json", "CHANGELOG.md", "bun.lock"],
         "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}",
         "preserveVersion": true
       }
